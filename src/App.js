@@ -5,12 +5,12 @@ const socket = io.connect("http://localhost:3001")
 function App() {
 
   const sendMessage = () => {
-    // socket.emit()
+    socket.emit("send-message", {message: "Hello"})
   };
   return (
     <div className="App">
       <input placeholder="Mensagem" />
-      <button onClick={sendMessage}>Submit</button>
+      <button onClick={sendMessage}>Send Message</button>
     </div>
   );
 }
